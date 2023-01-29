@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Resource  ../global_resources.robot
 
 Test Setup  Navigate to shop
 Test Teardown  Close Browser
@@ -23,8 +24,3 @@ Fill in credentials
     Input Text  user-name  ${username}
     Input Text  password   ${password}
     Click Button  login-button
-
-Navigate to shop
-    Comment   Open shop in browser
-    Open Browser  https://www.saucedemo.com/  chrome
-    Page Should Contain Button  login-button
